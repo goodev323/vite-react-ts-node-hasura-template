@@ -1,0 +1,13 @@
+schema:
+  - http://localhost:${HASURA_PORT}/v1/graphql:
+      headers:
+        x-hasura-admin-secret: ${HASURA_GRAPHQL_ADMIN_SECRET}
+documents: ./src/**/*.graphql
+generates:
+  ./src/gen/graphql-codegen.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-document-nodes
+    config:
+      skipTypename: false
