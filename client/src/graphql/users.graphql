@@ -1,6 +1,6 @@
 query Users {
   users {
-    user_id
+    id
     name
     email
   }

@@ -6,16 +6,19 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "graphql:start": "docker-compose -f ../docker-compose.yaml --env-file ../.env.local up -d",
-    "graphql:stop": "docker-compose -f ../docker-compose.yaml --env-file ../.env.local down",
-    "graphql:restart": "docker-compose -f ../docker-compose.yaml --env-file ../.env.local restart",
+    "hasura:start": "sh ../hasura/operate.sh start",
+    "hasura:stop": "sh ../hasura/operate.sh start",
+    "hasura:restart": "sh ../hasura/operate.sh restart",
     "graphql:codegen": "DOTENV_CONFIG_PATH=../.env.local graphql-codegen -r dotenv/config"
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
+    "@auth0/auth0-react": "^1.9.0",
     "graphql": "^16.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.6.2",
@@ -30,13 +33,14 @@
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "@vitejs/plugin-react": "^1.0.7",
+    "dotenv": "^16.0.0",
+    "dotenv-expand": "^8.0.3",
     "eslint": "^8.12.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "hasura-cli": "^2.2.0",
     "prettier": "^2.6.1",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"

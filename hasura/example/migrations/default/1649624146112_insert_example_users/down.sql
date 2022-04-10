@@ -1,0 +1,6 @@
+-- Could not auto-generate a down migration.
+-- Please write an appropriate down migration for the SQL below:
+-- INSERT INTO users (email, name) VALUES
+--     ('user1@example.com', 'Example1'),
+--     ('user2@example.com', 'Example2'),
+--     ('user3@example.com', 'Example3');

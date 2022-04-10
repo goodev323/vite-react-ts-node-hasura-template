@@ -1,5 +1,5 @@
 schema:
-  - http://localhost:${HASURA_PORT}/v1/graphql:
+  - ${HASURA_ENDPOINT}/v1/graphql:
       headers:
         x-hasura-admin-secret: ${HASURA_GRAPHQL_ADMIN_SECRET}
 documents: ./src/**/*.graphql

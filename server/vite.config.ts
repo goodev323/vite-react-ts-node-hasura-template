@@ -4,16 +4,15 @@ import path from "path";
 import { defineConfig } from "vite";
 import { VitePluginNode } from "vite-plugin-node";
 
-// https://vitejs.dev/config/
-
 export default () => {
-  const env = dotenv.config({ path: `../.env.local` });
+  dotenv.config({ path: `../.env.local` });
+  dotenv.config({ path: `./.env` });
+  const env = dotenv.config();
   dotenvExpand.expand(env);
   return defineConfig({
     base: "./",
     server: {
-      // vite server configs, for details see [vite doc](https://vitejs.dev/config/#server-host)
-      port: 3000,
+      port: 3001,
     },
     build: {
       outDir: "./dist",

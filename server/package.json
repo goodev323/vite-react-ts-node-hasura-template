@@ -7,6 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "hasura:start": "sh ../hasura/operate.sh start",
+    "hasura:stop": "sh ../hasura/operate.sh start",
+    "hasura:restart": "sh ../hasura/operate.sh restart",
     "graphql:codegen": "DOTENV_CONFIG_PATH=../.env.local graphql-codegen -r dotenv/config"
   },
   "dependencies": {

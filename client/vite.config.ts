@@ -1,18 +1,24 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import dotenv from "dotenv";
+import dotenvExpand from "dotenv-expand";
 import path from "path";
+import { defineConfig } from "vite";
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  base: "./",
-  server: {
-    // vite server configs, for details see [vite doc](https://vitejs.dev/config/#server-host)
-    port: 3001,
-  },
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src/"),
+export default () => {
+  dotenv.config({ path: `../.env.local` });
+  dotenv.config({ path: `./.env` });
+  const env = dotenv.config();
+  dotenvExpand.expand(env);
+  return defineConfig({
+    base: "./",
+    server: {
+      port: 3000,
     },
-  },
-});
+    plugins: [react()],
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src/"),
+      },
+    },
+  });
+};

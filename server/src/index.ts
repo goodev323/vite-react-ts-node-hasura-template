@@ -16,7 +16,7 @@ const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
 
 const app = express();
 
-app.get("/", async (req, res) => {
+app.get("/", async (_req, res) => {
   const users = await client.query<Users>({ query: Users });
   res.send(JSON.stringify(users));
 });
